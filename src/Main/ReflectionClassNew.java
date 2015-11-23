@@ -2,7 +2,7 @@ package Main;
 import Handlers.RadioHandler;
 import Handlers.WindowHandler;
 import Handlers.AlertHandler;
-
+import Handlers.MouseHoverHandler;
 import Handlers.DropDownHandler;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -15,6 +15,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest; 
 import org.testng.annotations.BeforeTest;
@@ -190,6 +192,15 @@ public class ReflectionClassNew {
 		AlertHandler alrt= new AlertHandler(); 
 		alrt.alerthandle(driver, PropertyValue, RealValue);
 	}
+	
+	public static void mouseHover(String Property,String PropertyValue, String RealValue)
+	{
+		if(Property.equals("xpath"))
+		{
+			MouseHoverHandler mhndl= new MouseHoverHandler();
+			mhndl.mouseHandling(driver, PropertyValue, RealValue);
+		}
+	} 
 }
    
 

@@ -23,15 +23,15 @@ public class TestNG_Initiate {
 		mapFromExcel=myobj.readExcel();  
 		ReflectionClassNew rf= new ReflectionClassNew();
 	 
-		for (int i=1; i<=28; i++)       
+		for (int i=1; i<=30; i++)       
 		{			 
 			listFromExcel = mapFromExcel.get("STEP_0"+i);    
 			
 			ReflectionClassNew.callMethods(listFromExcel.get(0), listFromExcel.get(1),listFromExcel.get(2),listFromExcel.get(3));   
 			 
 			}  
-	}         
+	}           
 	             
-}         
+}          
   
-           
+            
