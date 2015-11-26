@@ -6,11 +6,15 @@ import Handlers.MouseHoverHandler;
 import Handlers.DropDownHandler;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-import java.io.IOException;
+import java.io.File;
+import java.io.IOException; 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import org.openqa.selenium.By; 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot; 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -18,7 +22,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest; 
+import org.testng.annotations.AfterTest;  
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -38,7 +42,7 @@ public class ReflectionClassNew {
 	ReflectionClassNew()
 	{
 	 
-	 driver= new FirefoxDriver();    
+	 driver= new FirefoxDriver();     
 	}
 	
 	public static void callMethods(String Action, String Property, String PropertyValue, String RealValue ) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
@@ -47,8 +51,9 @@ public class ReflectionClassNew {
 	    methods.invoke(Action,Property, PropertyValue,RealValue);
 	}
 	//@Test(priority=0)
-	public static void getURL(String Property,String PropertyValue, String RealValue)
+	public static void getURL(String Property,String PropertyValue, String RealValue) throws IOException
  	{
+		try{
 		driver.get(RealValue);
 		 String ExpectedTitle="Welcome: Mercury Tours";
 		 String ActualTitle= driver.getTitle(); 
@@ -64,17 +69,34 @@ public class ReflectionClassNew {
 		{ 
 			System.out.println("Get URL Method Failed\n");
 		}*/
-	} 
-	
-  
-	
-	public static void enterText(String Property,String PropertyValue, String RealValue)
-	{
-		if(Property.equalsIgnoreCase("name")) 
-		{
-			
-			driver.findElement(By.name(PropertyValue)).sendKeys(RealValue);
 		}
+		catch(Exception e)
+		{
+			   File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		         
+	              FileUtils.copyFile(scrFile, new File("D:\\screenshot1.png"));
+		}
+	   
+		 
+ 	}
+	
+	public static void enterText(String Property,String PropertyValue, String RealValue) throws IOException
+	{
+		
+		    if(Property.equalsIgnoreCase("name")) 
+		     {
+		    	try{
+		    	    driver.findElement(By.name(PropertyValue)).sendKeys(RealValue); 
+                   
+                    } 
+		    	catch(Exception e) 
+				{
+					 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			         
+		             FileUtils.copyFile(scrFile, new File("D:\\screenshot2.png"));
+				}
+	          }
+		
 	}  
 	//@Test(priority=1)
 	public static void login(String Property,String PropertyValue, String RealValue)

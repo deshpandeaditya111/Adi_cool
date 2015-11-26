@@ -31,7 +31,7 @@ public class TestNG_Initiate {
 			 
 			}  
 	}           
-	             
-}          
+	              
+}           
   
-            
+             

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="64313" started-at="2015-11-23T06:30:20Z" finished-at="2015-11-23T06:31:24Z">
+  <suite name="Default suite" duration-ms="39607" started-at="2015-11-26T06:28:55Z" finished-at="2015-11-26T06:29:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="64313" started-at="2015-11-23T06:30:20Z" finished-at="2015-11-23T06:31:24Z">
+    <test name="Default test" duration-ms="39607" started-at="2015-11-26T06:28:55Z" finished-at="2015-11-26T06:29:35Z">
       <class name="Main.TestNG_Initiate">
-        <test-method status="PASS" signature="Smoke_Test_All_Functionality()[pri:0, instance:Main.TestNG_Initiate@2586d9a]" name="Smoke_Test_All_Functionality" duration-ms="64298" started-at="2015-11-23T12:00:20Z" finished-at="2015-11-23T12:01:24Z">
+        <test-method status="PASS" signature="Smoke_Test_All_Functionality()[pri:0, instance:Main.TestNG_Initiate@2586d9a]" name="Smoke_Test_All_Functionality" duration-ms="39578" started-at="2015-11-26T11:58:55Z" finished-at="2015-11-26T11:59:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Smoke_Test_All_Functionality -->
